@@ -21,6 +21,8 @@
         </tr>
       </thead>
       <tbody>
+   
+
         <%  @line_item.each do |item| %>
           <%= render 'lineitem', product: item.product, quantity: item.quantity.to_i %>
         <% end %>

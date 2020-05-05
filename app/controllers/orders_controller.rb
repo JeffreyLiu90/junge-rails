@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
 
+
+
   def show
+  
     @order = Order.find(params[:id])
     @line_item = LineItem.where(order_id: @order.id)
 
