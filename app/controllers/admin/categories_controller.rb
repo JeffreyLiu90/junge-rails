@@ -5,7 +5,7 @@ before_filter :authorize
   # http_basic_authenticate_with name: ENV["ADMIN"], password: ENV["ADMIN_PASS"]
   
   def index
-    @ategory = Category.order(id: :desc).all
+    @category = Category.order(id: :desc).all
   end
 
   def new
