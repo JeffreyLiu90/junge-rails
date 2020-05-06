@@ -39,10 +39,7 @@ class ApplicationController < ActionController::Base
     cookies[:cart]
   end
 
-<<<<<<< Updated upstream
-=======
 
 
 
->>>>>>> Stashed changes
 end
