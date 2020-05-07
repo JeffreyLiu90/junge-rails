@@ -8,8 +8,8 @@ RSpec.describe User, type: :model do
     it 'Should create a user' do
       user = User.create(
         email: "jeff@gmail.com",
-        lastname: "liu",
-        firstname: "Jeff",
+        name: "liu",
+
         password: "12345",
         password_confirmation: "12345"
         )
@@ -19,8 +19,8 @@ RSpec.describe User, type: :model do
 it 'should fail to log in if password is less than 3 characters' do
 user = User.create(
   email: "jeff@gmail.com",
-  lastname: "liu",
-  firstname: "Jeff",
+  name: "liu",
+
   password: "1",
   password_confirmation: "1"
   )
@@ -30,8 +30,8 @@ end
 it 'should fail to log in if password confirmation is incorrect' do
   user = User.create(
     email: "jeff@gmail.com",
-    lastname: "liu",
-    firstname: "Jeff",
+    name: "liu",
+
     password: "123",
     password_confirmation: "144"
     )
@@ -41,14 +41,14 @@ end
 it '3 should not save without unique email' do
   user = User.create(
     email: "liu@liu.com",
-    lastname: "liu",
-    firstname: "Jeff",
+    name: "liu",
+
     password_digest: "123"
     )
   user2 = User.create(
     email: "Liu@liu.com",
-    lastname: "liu",
-    firstname: "Jeff",
+    name: "liu",
+
     password_digest: "123"
     )
   expect(user2).to_not be_valid
@@ -59,8 +59,8 @@ describe '.authenticate_with_credentials' do
 it 'it should not authenticate if email or password is wrong' do
 user = User.create(
  email:'liu@liu.com',
- lastname:"liu",
- firstname:"Jeff",
+ name:"liu",
+
  password:"12345",
  password_confirmation:"12345"
 )
