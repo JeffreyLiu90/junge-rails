@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :email, case_sensitive: false, presence: true, uniqueness: true
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  validates :name, presence: true
   validates :password, presence: true, length: { minimum: 2 }
   validates :password_confirmation, presence: true
 
